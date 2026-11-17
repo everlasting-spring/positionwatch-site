@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PositionWatch Support</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500&family=Work+Sans:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #F2F5F9;
+  --surface: #FFFFFF;
+  --border: #DCE3EC;
+  --text: #1C2430;
+  --text-secondary: #5B6676;
+  --accent: #1F4E8C;
+  --accent-soft: #E3EBF8;
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161D;
+    --surface: #1A1F28;
+    --border: #2B323D;
+    --text: #EDF0F4;
+    --text-secondary: #9AA4B2;
+    --accent: #5B9BF0;
+    --accent-soft: #1E2A3D;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  margin: 0;
+}
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2.5rem;
+}
+.mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--accent);
+  flex-shrink: 0;
+  position: relative;
+}
+.mark::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  bottom: 10px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.9);
+}
+.mark::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  width: 22px;
+  height: 14px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  border-top-right-radius: 3px;
+  clip-path: polygon(0 100%, 0 40%, 60% 40%, 60% 0, 100% 0, 100% 100%);
+  opacity: 0.9;
+}
+.title-block h1 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.title-block p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.lede {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 56ch;
+  margin: 0 0 2.75rem;
+  text-wrap: balance;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 2.75rem 0 0.9rem;
+  text-wrap: balance;
+}
+h2:first-of-type { margin-top: 0; }
+h3 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 1.5rem 0 0.4rem;
+}
+p { margin: 0 0 1rem; max-width: 65ch; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.2rem; max-width: 65ch; }
+li { margin-bottom: 0.5rem; }
+strong { font-weight: 500; color: var(--text); }
+.callout {
+  background: var(--accent-soft);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  margin: 0 0 1rem;
+  max-width: 65ch;
+}
+.callout p { margin: 0; color: var(--text); }
+.faq-item {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.3rem;
+  margin: 0 0 0.9rem;
+}
+.faq-item h3 { margin-top: 0; }
+.faq-item p:last-child { margin-bottom: 0; }
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--border);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+footer a { color: var(--accent); }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="mark" role="img" aria-label="PositionWatch mark"></div>
+    <div class="title-block">
+      <h1>PositionWatch Support</h1>
+      <p>Mac &amp; iOS</p>
+    </div>
+  </header>
+
+  <p class="lede">PositionWatch tracks your individual cryptocurrency positions and alerts you the moment your own sell criteria are met, so you can execute the trade yourself — on your own terms, without leaving funds on an exchange. This page covers common questions and how to reach us if something isn't working.</p>
+
+  <h2>Getting started</h2>
+  <div class="faq-item">
+    <h3>How do I add a position?</h3>
+    <p>Tap or click the add button, enter the coin, your quantity, and your cost basis per unit. PositionWatch looks up live prices by coin, not by exchange, so it works the same regardless of where you actually hold your funds.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How do I set up a sell rule?</h3>
+    <p>Open a position's sell rule editor and add one or more criteria — a price target, a percent gain or loss, a trailing stop, a moving average crossover, a support/resistance level, or a number of days since a date you mark yourself. "Target" criteria (price target, percent gain, moving average, support/resistance, days-since) must <strong>all</strong> be true together before the rule fires. Stops (percent loss, trailing stop, fixed stop) are independent and fire the moment <strong>any single one</strong> is hit — the way a real stop-loss should behave.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Where is the Mac app? I don't see it in the Dock.</h3>
+    <p>PositionWatch for Mac lives entirely in the menu bar at the top of your screen — it has no Dock icon or main window by design. Look for its icon among your other menu bar items and click it to open the position list.</p>
+  </div>
+
+  <h2>Syncing between Mac, iPhone, and iPad</h2>
+  <div class="faq-item">
+    <h3>Do I need an account?</h3>
+    <p>No separate account — PositionWatch syncs your positions and rules through your own private iCloud account using Apple's CloudKit. Make sure you're signed into the same iCloud account on every device you want to sync.</p>
+  </div>
+  <div class="faq-item">
+    <h3>A position I added on one device isn't showing up on another.</h3>
+    <p>Sync usually completes within a few seconds but can occasionally take longer depending on network conditions. Confirm both devices are signed into the same iCloud account and connected to the internet, then pull to refresh (iOS) or reopen the menu bar panel (Mac).</p>
+  </div>
+
+  <h2>Alerts and notifications</h2>
+  <div class="faq-item">
+    <h3>I'm not getting notified when a rule triggers.</h3>
+    <p>Check that Notifications are allowed for PositionWatch in your device's Settings app, and that a Focus or Do Not Disturb mode isn't silencing them. PositionWatch sends time-sensitive alerts specifically so they're hard to miss, but iOS still respects your own notification settings.</p>
+  </div>
+  <div class="faq-item">
+    <h3>A triggered rule keeps showing as "Triggered — disarmed."</h3>
+    <p>That's expected: once a rule's conditions are met and it alerts you, it disarms itself automatically so it doesn't keep re-alerting every refresh. Tap "Re-arm" on that rule once you've decided what to do, if you want to keep watching that position.</p>
+  </div>
+
+  <div class="callout">
+    <p>PositionWatch never connects to an exchange, executes a trade, or holds your funds. It only watches prices and tells you when your own criteria are met — the decision and the trade are always yours.</p>
+  </div>
+
+  <h2>Still need help?</h2>
+  <p>If something isn't covered here, email us and we'll get back to you.</p>
+
+  <footer>
+    <p>Contact <a href="mailto:jeffrycross+positionwatch@gmail.com">jeffrycross+positionwatch@gmail.com</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
